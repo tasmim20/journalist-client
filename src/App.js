@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home/Home';
 import Services from './Home/Home/Services/Services';
+import ServiceDetails from './Home/ServiceDetails/ServiceDetails';
 import Main from './Layout/Main';
 
 function App() {
@@ -20,6 +21,11 @@ function App() {
           path: '/services',
           element:<Services></Services>,
           loader: () => fetch('http://localhost:5000/services')
+        },
+        {
+          path: '/serviceDetails/:id',
+          element:<ServiceDetails></ServiceDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         },
       ]
     }

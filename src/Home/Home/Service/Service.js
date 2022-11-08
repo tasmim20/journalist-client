@@ -11,12 +11,13 @@ const Service = ({service}) => {
           <div className="card-actions justify-end text-black">
 
             {
-                description.length > 250 ?
-             <p>{description.slice(0, 300) + '...'} <Link className='text-blue' to={`/services/${_id}`}>Read more</Link></p>
+                description.length > 100 ?
+             <p>{description.slice(0, 200) + '...'} <Link className='text-blue-700 font-weight-900' to={`/serviceDetails/${_id}`}>Read more</Link></p>
                :
                 <p>{description}</p>
             }
-           <button className="btn btn-primary">View Details</button>
+            <p className='text-pink-500 text-lg font-semibold'>Fee(price):{price}.00</p>
+          <Link to={`/serviceDetails/${_id}`}> <button className="btn btn-primary ">View Details</button></Link>
           </div>
         </div>
       </div>
