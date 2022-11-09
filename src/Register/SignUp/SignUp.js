@@ -17,6 +17,7 @@ const SignUp = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            form.reset();
         })
         .catch(error => console.error(error))
      }
@@ -50,7 +51,7 @@ const SignUp = () => {
      </div>
      <div className="form-control mt-6">
         <input type="submit"  className="btn btn-outline-danger  bg-sky-600 text-white" value="signUp"/>
-       <button type='submit'>Sign Up</button>
+       {/* <button type='submit'>Sign Up</button> */}
      </div>
    </form>
  </div>
