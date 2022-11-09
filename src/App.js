@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import AllServices from './Home/Home/AllServices/AllServices';
 import Home from './Home/Home/Home';
 import Services from './Home/Home/Services/Services';
 import ServiceDetails from './Home/ServiceDetails/ServiceDetails';
@@ -19,12 +20,17 @@ function App() {
         {
           path: '/',
           element:<Home></Home>,
+          loader: () => fetch('http://localhost:5000/servicesLimit')
+        },
+        {
+          path:'/allServices',
+          element:<AllServices></AllServices>,
           loader: () => fetch('http://localhost:5000/services')
         },
         {
           path: '/services',
           element:<Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('http://localhost:5000/servicesLimit')
         },
         {
           path: '/serviceDetails/:id',

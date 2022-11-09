@@ -26,7 +26,7 @@ const SignUp = () => {
     return (
         <div className='flex justify-center bg-purple-400 text-black py-20'>
         <div className="card w-full max-w-lg shadow-2xl bg-white">
-        <h1 className='font-bold text-purple-900 text-4xl text-center pb-6'>Create Account</h1>
+        <h1 className='font-bold text-purple-900 text-4xl text-center pt-6 pb-3'>Create Account</h1>
    <form onSubmit={handleSignUp} className="card-body">
      <div className="form-control">
     
