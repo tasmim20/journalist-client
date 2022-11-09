@@ -4,7 +4,9 @@ import Home from './Home/Home/Home';
 import Services from './Home/Home/Services/Services';
 import ServiceDetails from './Home/ServiceDetails/ServiceDetails';
 import Main from './Layout/Main';
+import AddService from './Register/AddService/AddService';
 import Login from './Register/Login/Login';
+import MyReviews from './Register/MyReviews/MyReviews';
 import SignUp from './Register/SignUp/SignUp';
 
 function App() {
@@ -37,6 +39,15 @@ function App() {
           path:'/login',
           element: <Login></Login>
         },
+        {
+          path:'/myReviews',
+          element:<MyReviews></MyReviews>
+        },
+        {
+          path:'/addService',
+          element: <AddService></AddService>
+
+        }
       ]
     }
   ])

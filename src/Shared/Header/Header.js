@@ -1,7 +1,13 @@
-import React from 'react';
+
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+
+  const{user, logOut} = useContext(AuthContext);
+
+
     return (
         <div className=" sticky top-0 z-30 navbar bg-base-100">
         <div className="sticky top-0 z-30 navbar-start">
@@ -27,8 +33,20 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             
-            <li><Link to='/signUp'>Sign Up</Link></li>
+         {
+          user?.uid ? 
+          <>
+          <li><Link to='/myReviews'>My Reviews</Link></li>
+        <li>  <Link to='/addService'>Add Service</Link></li>
+          <button onClick={logOut} className="btn btn-active btn-secondary">Log Out</button>
+          </>
+         
+          :
+          <>
+             <li><Link to='/signUp'>Sign Up</Link></li>
             <li><Link to ='/login'>Login</Link></li>
+          </>
+         }
 
             
             <li><Link to='/'>Blog</Link></li>
