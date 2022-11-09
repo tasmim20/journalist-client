@@ -80,6 +80,7 @@ const ServiceDetails = () => {
               </div>
     <h2 className="card-title">{user.name}</h2>
     <p>{user.review}</p>
+   
     <div className="card-actions justify-end">
       <button className="btn btn-primary">Remove</button>
     </div>
