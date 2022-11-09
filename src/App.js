@@ -3,12 +3,15 @@ import './App.css';
 import AllServices from './Home/Home/AllServices/AllServices';
 import Home from './Home/Home/Home';
 import Services from './Home/Home/Services/Services';
+import Reviews from './Home/ServiceDetails/Reviews/Reviews';
+import ReviewSection from './Home/ServiceDetails/ReviewSection/ReviewSection';
 import ServiceDetails from './Home/ServiceDetails/ServiceDetails';
 import Main from './Layout/Main';
 import AddService from './Register/AddService/AddService';
 import Login from './Register/Login/Login';
 import MyReviews from './Register/MyReviews/MyReviews';
 import SignUp from './Register/SignUp/SignUp';
+import Blog from './Shared/Blog/Blog';
 
 function App() {
 
@@ -38,6 +41,17 @@ function App() {
           loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
+          path: '/reviewSection/:id',
+          element:<ReviewSection></ReviewSection>,
+          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path:'/reviews/:id',
+          element:<Reviews></Reviews>,
+          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+
+        },
+        {
           path:'/signUp',
           element: <SignUp></SignUp>
         },
@@ -53,6 +67,10 @@ function App() {
           path:'/addService',
           element: <AddService></AddService>
 
+        },
+        {
+          path:'/blog',
+          element:<Blog></Blog>
         }
       ]
     }

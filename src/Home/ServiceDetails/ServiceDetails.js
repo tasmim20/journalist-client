@@ -1,36 +1,36 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import ReviewSection from './ReviewSection/ReviewSection';
 
 const ServiceDetails = () => {
     const {name, _id,description, price, img, user,rating} = useLoaderData();
     return (
- <div className='grid grid-cols-1 lg:grid-cols-2'>
-    <div className='service-section '>
-    <div className='flex justify-center my-30 mx-30'>
-          <div className="card card-compact w-96 bg-base-100 mx-10 my-10 shadow-xl">
+ <div className='grid grid-cols-1 lg:grid-cols-2 bg-white gap-x-20 rounded-xl'>
+     <div className="card card-compact w-full bg-base-100 shadow-xl mx-16 mb-14 mt-8">
+        <figure>
           <PhotoProvider>
-      <PhotoView src={img}>
-        <img src={img} alt="" />
-      </PhotoView>
-    </PhotoProvider>
-      </div>
-  
-        {/* <figure>< img  className='h-80' src={img} alt="Shoes" /></figure> */}
+            <PhotoView src={img}>
+            < img  className='h-80' src={img} alt="Shoes" />
+            </PhotoView>
+          </PhotoProvider>
+          </figure>
         <div className="card-body bg-white">
-          <h1 className="card-title text-3xl text-red-700 font-bold">{name}</h1>
+          <h1 className="card-title text-4xl font-bold text-red-700">{name}</h1>
           <div className="card-actions justify-end text-black">
-             <p>{description.slice(0,700)}</p>
+              <p>{description}</p>
+          
           </div>
           <div>
-            <p>Payment for month:{price}</p>
+             <p className='text-black text-2xl my-4'>Fee(price):{price}.00</p>
+            <p className='text-xl my-4 text-black'>Rating: {rating.number}star</p>
+            <p className='text-red-800'><span>Badge: {rating.badge}</span></p>
           </div>
         </div>
       </div>
-    </div>
-    <div className='review-section flex align-center  justify-center bg-purple-300  mx-16'>
-        <div className="overflow-x-auto ">
+    <div className='review-section flex align-center  justify-center bg-purple-300  mx-16 mb-14 mt-8 rounded-xl'>
+     
   {/* <table className="table w-full  bg-purple-300">
      <thead>
       <tr>
@@ -70,25 +70,10 @@ const ServiceDetails = () => {
    
     
   </table> */}
-   <h2 className='text-3xl  mt-8 bg-red-500 rounded-xl text-center font-semibold text-black'>Reviews</h2>
-  <div className="card w-96 bg-white shadow-xl mx-10 mt-10">
- 
-  <div className="card-body">
-  <div className="mask mask-squircle w-16 h-22">
-                <img src={user.img} alt="Avatar Tailwind CSS Component" />
-    
-              </div>
-    <h2 className="card-title">{user.name}</h2>
-    <p>{user.review}</p>
-   
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Remove</button>
+
+  <ReviewSection></ReviewSection>
     </div>
-  </div>
-</div>
-</div>
-    </div>
- </div>
+ </div> 
 
 
 
