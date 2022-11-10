@@ -3,10 +3,12 @@ import './App.css';
 import AllServices from './Home/Home/AllServices/AllServices';
 import Home from './Home/Home/Home';
 import Services from './Home/Home/Services/Services';
+import AllReviews from './Home/ServiceDetails/AllReviews/AllReviews';
 import Reviews from './Home/ServiceDetails/Reviews/Reviews';
 import ReviewSection from './Home/ServiceDetails/ReviewSection/ReviewSection';
 import ServiceDetails from './Home/ServiceDetails/ServiceDetails';
 import Main from './Layout/Main';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 import AddService from './Register/AddService/AddService';
 import Login from './Register/Login/Login';
 import MyReviews from './Register/MyReviews/MyReviews';
@@ -52,6 +54,11 @@ function App() {
 
         },
         {
+         path:'/allReviews',
+         element:<AllReviews></AllReviews>,
+         loader: () => fetch('http://localhost:5000/reviews')
+        },
+        {
           path:'/signUp',
           element: <SignUp></SignUp>
         },
@@ -61,11 +68,11 @@ function App() {
         },
         {
           path:'/myReviews',
-          element:<MyReviews></MyReviews>
+          element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
           path:'/addService',
-          element: <AddService></AddService>
+          element: <PrivateRoute><AddService></AddService></PrivateRoute>
 
         },
         {
