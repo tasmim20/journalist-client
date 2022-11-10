@@ -25,38 +25,38 @@ function App() {
         {
           path: '/',
           element:<Home></Home>,
-          loader: () => fetch('http://localhost:5000/servicesLimit')
+          loader: () => fetch('https://journalist-server.vercel.app/servicesLimit')
         },
         {
           path:'/allServices',
           element:<AllServices></AllServices>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('https://journalist-server.vercel.app/services')
         },
         {
           path: '/services',
           element:<Services></Services>,
-          loader: () => fetch('http://localhost:5000/servicesLimit')
+          loader: () => fetch('https://journalist-server.vercel.app/servicesLimit')
         },
         {
           path: '/serviceDetails/:id',
           element:<ServiceDetails></ServiceDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params}) => fetch(`https://journalist-server.vercel.app/services/${params.id}`)
         },
         {
           path: '/reviewSection/:id',
           element:<ReviewSection></ReviewSection>,
-          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params}) => fetch(`https://journalist-server.vercel.app/services/${params.id}`)
         },
         {
           path:'/reviews/:id',
           element:<Reviews></Reviews>,
-          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params}) => fetch(`https://journalist-server.vercel.app/services/${params.id}`)
 
         },
         {
          path:'/allReviews',
          element:<AllReviews></AllReviews>,
-         loader: () => fetch('http://localhost:5000/reviews')
+         loader: () => fetch('https://journalist-server.vercel.app/reviews')
         },
         {
           path:'/signUp',
