@@ -32,6 +32,7 @@ const Header = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
+            <li><Link to='/allServices'>Services</Link></li>
             
          {
           user?.uid ? 
