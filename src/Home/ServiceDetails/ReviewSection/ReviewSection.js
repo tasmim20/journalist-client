@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import AllReviews from '../AllReviews/AllReviews';
 import Reviews from '../Reviews/Reviews';
 
 const ReviewSection = () => {
@@ -36,11 +35,7 @@ const ReviewSection = () => {
 
         <div className='flex align-center  justify-center ms-6 pb-4 '>
 
-          <div>
-            {
-              reviews.map(review => <AllReviews key={review._id} review={review}></AllReviews>)
-            }
-          </div>
+         
                  {
                    user?.uid?
                    <Reviews></Reviews>

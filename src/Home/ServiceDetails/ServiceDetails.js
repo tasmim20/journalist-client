@@ -31,45 +31,7 @@ const ServiceDetails = () => {
       </div>
     <div className='review-section flex align-center  justify-center bg-purple-300  mx-16 mb-14 mt-8 rounded-xl'>
      
-  {/* <table className="table w-full  bg-purple-300">
-     <thead>
-      <tr>
-      
-        <th>Name</th>
-        <th>Review</th>
-        <th>Rating</th>
-     
-      </tr>
-    </thead>
-    <tbody className=' bg-purple-300'>
 
-      <tr>
-        <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img src={user.img} alt="Avatar Tailwind CSS Component" />
-    
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">{user.name}</div>
-              <div className="text-sm opacity-50"></div>
-            </div>
-          </div>
-        </td>
-        <td>
-       {user.review.slice(0,10)}
-        </td>
-        <td>{rating.number}</td>
-        <th>
-          <button className="btn btn-danger btn-xs">Remove</button>
-        </th>
-      </tr>
-    </tbody>
-   
-    
-  </table> */}
 
   <ReviewSection></ReviewSection>
     </div>

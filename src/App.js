@@ -3,7 +3,6 @@ import './App.css';
 import AllServices from './Home/Home/AllServices/AllServices';
 import Home from './Home/Home/Home';
 import Services from './Home/Home/Services/Services';
-import AllReviews from './Home/ServiceDetails/AllReviews/AllReviews';
 import Reviews from './Home/ServiceDetails/Reviews/Reviews';
 import ReviewSection from './Home/ServiceDetails/ReviewSection/ReviewSection';
 import ServiceDetails from './Home/ServiceDetails/ServiceDetails';
@@ -53,11 +52,7 @@ function App() {
           loader: ({params}) => fetch(`https://journalist-server.vercel.app/services/${params.id}`)
 
         },
-        {
-         path:'/allReviews',
-         element:<AllReviews></AllReviews>,
-         loader: () => fetch('https://journalist-server.vercel.app/reviews')
-        },
+        
         {
           path:'/signUp',
           element: <SignUp></SignUp>

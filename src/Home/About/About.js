@@ -11,7 +11,7 @@ const About = () => {
           <div className='w-1/2'>
             <h1 className="text-5xl font-bold text-black">About me..!!</h1>
             <p className="py-6 text-xl text-black">I investigates, collects, and presents information as a news story. This can be presented through newspapers, magazines, radio, television and the internet. Journalists are relied upon to present news in a well-rounded, objective manner..</p>
-            <button className="btn btn-outline bg-purple-700 text-black"></button>
+            <button className="btn btn-outline bg-purple-700 text-black">Contact</button>
           </div>
         </div>
       </div>
